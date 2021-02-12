@@ -14,6 +14,7 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "categories": ["UTILITY"],
+  "__wm": "VGVtcGxhdGUtQXV0aG9yX3NoYTI1Nkhhc2hlci1TaW1vLUFoYXZh",
   "displayName": "sha256 Hasher",
   "description": "Use this variable to hash any input value with SHA256.",
   "containerContexts": [
