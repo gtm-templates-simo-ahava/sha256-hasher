@@ -61,12 +61,59 @@ ___SANDBOXED_JS_FOR_SERVER___
 
 const sha256Sync = require('sha256Sync');
 
+if (!data.input){
+  return undefined;
+}
+
 return sha256Sync(data.input, {outputEncoding: data.encoding});
 
 
 ___TESTS___
 
-scenarios: []
+scenarios:
+- name: Test on 12341123213
+  code: |-
+    const mockData = {
+      input: "12341123213"
+    };
+
+    // Call runCode to run the template's code.
+    let variableResult = runCode(mockData);
+
+    // Verify that the variable returns a result.
+    assertThat(variableResult).isDefined();
+- name: Test on empty string
+  code: |-
+    const mockData = {
+      input: ""
+    };
+
+    // Call runCode to run the template's code.
+    let variableResult = runCode(mockData);
+
+    // Verify that the variable returns a result.
+    assertThat(variableResult).isUndefined();
+- name: Test on undefined
+  code: |-
+    const mockData = {
+      input: undefined
+    };
+
+    // Call runCode to run the template's code.
+    let variableResult = runCode(mockData);
+
+    // Verify that the variable returns a result.
+    assertThat(variableResult).isUndefined();
+- name: Test without key
+  code: |-
+    const mockData = {
+    };
+
+    // Call runCode to run the template's code.
+    let variableResult = runCode(mockData);
+
+    // Verify that the variable returns a result.
+    assertThat(variableResult).isUndefined();
 
 
 ___NOTES___
