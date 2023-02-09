@@ -1,6 +1,8 @@
 homepage: "https://www.simoahava.com/"
 versions:
   # Latest version
+  - sha: 747624f9d75ef74bad7c43ffb38c519974c3c511
+    changeNotes: Return undefined when no valid value is present.
   - sha: b0eb55a5d04c6f07f95534af959c48f49364c6a0
     changeNotes: Initial release.
   # Older versions
