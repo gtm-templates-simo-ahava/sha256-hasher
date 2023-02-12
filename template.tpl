@@ -61,7 +61,7 @@ ___SANDBOXED_JS_FOR_SERVER___
 
 const sha256Sync = require('sha256Sync');
 
-id (!data.input) return;
+if (!data.input) return;
 
 return sha256Sync(data.input, {outputEncoding: data.encoding});
 
